@@ -41,6 +41,7 @@ drawOutside();
 s.addEventListener("click",stop);
 circ.addEventListener("click",animate);
 dvd.addEventListener("click",animateDVD);
+//dvd.addEventListener("click",dvdLogoAnimation);
 
 //Draw circle with the current radius
 function drawDot(){
@@ -83,6 +84,7 @@ function animate(e){
     hello = window.requestAnimationFrame(animate);
 }
 
+
 //Stop the drawing until told to draw again
 function stop(e){
     window.cancelAnimationFrame(hello);
@@ -120,6 +122,53 @@ function animateDVD(e){
     
     loadDVD();
     window.requestAnimationFrame(animateDVD);
-   
+    
 }
+
+//function within a function; all setup for DVD animations in this function 
+function dvdLogoAnimation(e){
+    var logo2 = new Image();
+    logo2.src = "logo_dvd.jpg";
+    var dvdX2 = width/2;
+    var dvdY2 = height/2;
+    var movingUp2 = true;
+    var movingRight2 = true;
+
+    function animateDVD2(){
+	if (movingUp2){
+	    dvdY2--;
+	}else{
+	    dvdY2++;
+	}
+
+	if (movingRight2){
+	    dvdX2++;
+	}else{
+	    dvdX2--;
+	}
+
+	if (dvdX2 >= width-100){
+	    movingRight2 = false;
+	}else{
+	    if (dvdX2 <= 0){
+		movingRight2 = true;
+            }
+	}
+	if (dvdY2 >= height-100){
+	    movingUp2 = true;
+	}else{
+	    if (dvdY2 <= 0){
+		movingUp2 = false;
+            }
+	}
+	
+	clear();
+	ctx.drawImage(logo2,dvdX2,dvdY2,100,100);
+	window.requestAnimationFrame(animateDVD2);
+    }
+
+    animateDVD2();
+    
+}
+
 
