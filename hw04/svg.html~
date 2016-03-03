@@ -9,6 +9,9 @@
       <!--<circle cx="250" cy="250" r="75" fill="yellow" stroke="black"/>-->          <!--<circle cx="0" cy="0" r="100" fill="red" stroke="black"/>-->
 
       <!--<rect x="100" y="100" width="300" height="75" fill="blue"/>-->
+      <button id="stop">Stop</button>
+      <button id="circle">Circle</button>
+      <button id="dvd">DVD</button>
     </svg>
   </body>
   <script src="svg.js"></script>
