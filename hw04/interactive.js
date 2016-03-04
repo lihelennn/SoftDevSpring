@@ -1,34 +1,33 @@
+//Had a small bug (fixed as of 03/03/2016): had "https://www.w3.org/2000/svg" instead of "http://www.w3.org/2000/svg"
+
+/*
+  Helen Li
+  SoftDev2 pd 3
+  HW04 -- SVG
+  2016-03-03
+*/
+
 var pic = document.getElementById("vimage");
+var c = document.createElementNS("http://www.w3.org/2000/svg","circle");
 
-//this.setAttribute("fill","green");
-
-var mySVG = document.createElementNS("https://www.w3.org/2000/svg","svg");
-mySVG.setAttribute("height",500);
-mySVG.setAttribute("width",500);
-mySVG.setAttribute("id","vimage");
-mySVG.setAttribute("style","border:2px solid;");
-document.body.appendChild(mySVG);
-
-var radius = 100;
-var width = mySVG.getAttribute("width");
-var height = mySVG.getAttribute("height");
+var radius = 0;
+var width = pic.getAttribute("width");
+var height = pic.getAttribute("height");
 var expanding = true;
+var intervalID;
 
-//var start = document.getElementById("circle");
-//var stop = document.getElementById("stop");
-//var dvd = document.getElementById("dvd");
-mySVG.addEventListener("click",clicked);
-//start.addEventListener("click", changeSize);
+c.setAttribute("cx",width/2);
+c.setAttribute("cy",height/2);
+c.setAttribute("r",radius.toString());
+c.setAttribute("fill","blue");
+c.setAttribute("stroke","black");
+pic.appendChild(c);
 
-function clear(){
-    var c = document.createElementNS("https://www.w3.org/2000/svg","circle");
-    c.setAttribute("cx",0);
-    c.setAttribute("cy",0);
-    c.setAttribute("r",radius.toString());
-    c.setAttribute("fill","white");
-    c.setAttribute("stroke","white");
-    mySVG.appendChild(c);
-}
+startCircle = document.getElementById("startCircle");
+stopCircle = document.getElementById("stopCircle");
+
+startCircle.addEventListener("click",startC);
+stopCircle.addEventListener("click",stopC);
 
 var changeSize = function(){
     console.log(radius);
@@ -37,7 +36,7 @@ var changeSize = function(){
     }else{
 	if (radius == 0){
 	    expanding = true;
-        }
+	}
     }
     if (expanding){
 	radius++;
@@ -48,26 +47,17 @@ var changeSize = function(){
 }
 
 function drawDot(){
-    var c = document.createElementNS("https://www.w3.org/2000/svg","circle");
-    console.log("hello");
-    clear();
-    c.setAttribute("cx",0);
-    c.setAttribute("cy",0);
     c.setAttribute("r",radius.toString());
-    c.setAttribute("fill","red");
-    c.setAttribute("stroke","black");
-    mySVG.appendChild(c);
-    console.log(document.getElementsByTagName("svg"));
+    pic.appendChild(c);
 
 }
 
-function clicked(e){
-    //console.log(radius);
+function startC(e){
     changeSize();
-    intervalID = window.setInterval(clicked,16);
-
+    intervalID = window.setInterval(changeSize,16);
 }
 
-//drawDot(e.offsetX,e.offsetY);
-
+function stopC(e){
+    clearInterval(intervalID);
+}
 
