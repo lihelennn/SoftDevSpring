@@ -37,4 +37,5 @@ return d*10+ "px";});
 
 //d --> corresponding number in the array data
 
+barEnter.text(function(d){return d;});
 
