@@ -1,0 +1,40 @@
+Selectors
+
+Like jquery, you can select DOM elements using d3 functions
+
+d3.select(<IDENTIFIER>);
+	Returns the first element that matches the given identifier
+
+d3.selectAll(<IDENTIFIER>); 
+	Returns all element that matches the given identifier in an array
+
+
+d3.select("body").style("color","red")
+
+d3.selectAll("p")
+	.style("font-size",
+	function(){
+		return Math.floor(Math.random()*16)+"px})
+
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+var data = [4, 8, 15, 16, 23, 42];
+
+var chart = d3.select(".chart");
+
+var bar = chart.selectAll("div");
+
+var barUpdate = bar.data(data);
+
+var barEnter = barUpdate.enter().append("div");
+
+(Enter Selection
+Collection of placeholder nodes for each data element for which no corresponding existing DOM element was found.)
+
+barEnter.style("width",function(d){
+return d*10+ "px";});
+
+//d --> corresponding number in the array data
+
+

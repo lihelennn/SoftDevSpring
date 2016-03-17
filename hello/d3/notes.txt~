@@ -1,0 +1,12 @@
+Selectors
+
+Like jquery, you can select DOM elements using d3 functions
+
+d3.select(<IDENTIFIER>);
+	Returns the first element that matches the given identifier
+
+d3.selectAll(<IDENTIFIER>); 
+			reutrns all element that matches the given identifier in an array
+
+
+d3.select("body").style("color","red")

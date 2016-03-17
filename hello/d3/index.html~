@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+
+  <title>d3</title>
+
+</head>
+
+<style>
+
+  .chart div{
+  font:10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+  }
+</style>
+
+  <body>
+
+    <div class="chart">
+
+      <div stlye="width: 40px;">4</div>
+      <div stlye="width: 60px;">6</div>
+      <div stlye="width: 80px;">8</div>
+
+</div
+
+<body>
+
+
