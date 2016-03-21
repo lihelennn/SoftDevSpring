@@ -2,12 +2,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/style.css">
+  <link red="stylesheet" href="css/style.css">
   <title>d3</title>
 
 </head>
 
-<!--
 <style>
 
   .chart div{
@@ -20,7 +19,6 @@
   }
 
 </style>
--->
 
 <body>
 

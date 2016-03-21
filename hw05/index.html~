@@ -1,10 +1,3 @@
-<!--
-Helen Li
-SoftDev2 pd3
-HW05 -- The Best Defense Against Tyranny...
-2016-03-21
--->
-
 <!DOCTYPE html>
 
 <head>
@@ -24,14 +17,13 @@ HW05 -- The Best Defense Against Tyranny...
       <h2 id="republicans">KEY:</h2>
     </div>
 
+    <br><br>
     <div class="chartR">
       <h2 id="republicans">RESULTS:</h2>
       <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
       <script src="index.js"></script>
     </div>
   </div>
-
-
 
   <div class="right">
     <h1 class="democrats">Democrats</h1>
@@ -43,6 +35,7 @@ HW05 -- The Best Defense Against Tyranny...
       <h2 id="democrats">KEY:</h2>
     </div>
 
+    <br><br>
     <div class="chartD">
       <h2 id="democrats">RESULTS:</h2>
       <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -51,5 +44,3 @@ HW05 -- The Best Defense Against Tyranny...
   </div>
 
 </body>
-
-
