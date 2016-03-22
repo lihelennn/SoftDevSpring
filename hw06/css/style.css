@@ -1,0 +1,71 @@
+.chartR div{
+    font: 12px monospace;
+    background-color: orange;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+}
+
+.keyR div{
+    font: 12px monospace;
+    background-color: orange;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+}
+
+.chartD div{
+    font: 12px monospace;
+    background-color: orange;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+}
+
+.keyD div{
+    font: 12px monospace;
+    background-color: orange;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+}
+
+
+.republicans {
+    font: 30px monospace;
+    color: red;
+}
+
+.left{
+    float: left;
+    width: 625px;
+    border: 3px solid red;
+    padding: 10px;
+}
+
+.right{
+    float: right;
+    width: 625px;
+    border: 3px solid blue;
+    padding: 10px;
+}
+
+.democrats{
+    font: 30px monospace;
+    color: blue;
+}
+
+#republicans{
+    font: 20px monospace;
+    color: red;
+}
+
+
+#democrats{
+    font: 20px monospace;
+    color: blue;
+}

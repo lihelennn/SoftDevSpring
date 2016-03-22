@@ -12,3 +12,5 @@ barEnter.style("width",function(d){
     return d*10+ "px";});
 
 barEnter.text(function(d){return d;});
+
+
