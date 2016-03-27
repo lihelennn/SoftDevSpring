@@ -13,7 +13,11 @@ var republicanDelegateNumber = [50, 28, 9, 58, 40, 172, 37, 28, 16, 19, 99, 76, 
 var alreadyAllotedR = ["Iowa", "New Hampshire", "Nevada", "South Carolina", "Alabama", "Alaska", "Arkansas", "Georiga", "Massaschusetts", "Minnesota", "Oklahoma", "Tennessee", "Texas", "Vermont", "Virginia", "American Samoa", "Kansas", "Kentucky", "Louisiana", "Maine", "Puerto Rico", "Hawaii", "Idaho", "Michigan", "Mississippi", "Virgin Islands", "District of Columbia", "Guam", "Wyoming", "Florida", "Illinois", "Missouri", "North Carolina", "Nortern Marianas", "Ohio"];
 
 //republican bars
-var showRep = function(e){
+var showRepOriginal = function(){
+    d3.select(".right").transition().each("end",function(){
+	d3.select(this).style("visibility", "hidden");
+    }
+					 );
     console.log("clicked");
     var chart = d3.select(".chartR");
     var bar = chart.selectAll("div");
@@ -62,7 +66,11 @@ var democratDelegateNumber = [52, 32, 43, 59, 60, 11, 37, 78, 117, 116, 93, 42, 
 
 //democratic bars
 
-var showDem = function(e){
+var showDemOriginal = function(){
+    d3.select(".left").transition().each("end",function(){
+	d3.select(this).style("visibility", "visible");
+    }
+					);
     
     var chart = d3.select(".chartD");
     var bar = chart.selectAll("div");
@@ -73,7 +81,9 @@ var showDem = function(e){
     barEnter.style("background-color",function(d){
 	if (alreadyAllottedD.indexOf(d) >= 0){
 	    return "purple";
-	}});
+	}
+	return "orange";
+    });
 
     barEnter.text(function(d){
 	return d + " " + democratDelegateNumber[democratStates.indexOf(d)];
@@ -107,16 +117,34 @@ var showDem = function(e){
     keyBarEnter.style("background-color",function(d){
 	if (d == "allotted"){
 	    return "purple";
-	}});
+	}
+	return "orange";
+    });
 }
 
-var rep = document.getElementsByClassName("left");
-console.log(rep);
-rep[0].addEventListener("click",showDem);
+var showRep = function(){
+    d3.select(".left").transition().each("end",function(){
+	d3.select(this).style("visibility", "visible");
+    });
 
-var dem = document.getElementsByClassName("right");
-console.log(dem);
-dem[0].addEventListener("click",showRep);
+    d3.select(".right").transition().each("end",function(){
+	d3.select(this).style("visibility", "hidden");
+	
+    });}
 
 
-//d3.select(".left").exit().transition().remove();
+
+var showDem = function(){
+    d3.select(".right").transition().each("end",function(){
+	d3.select(this).style("visibility", "visible");
+    });
+    d3.select(".left").transition().each("end",function(){
+	d3.select(this).style("visibility", "hidden");
+    });
+    
+}
+
+showRepOriginal();
+showDemOriginal();
+
+
