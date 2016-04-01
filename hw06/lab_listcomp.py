@@ -56,18 +56,17 @@ def passwordRating(password):
     upperCase = [x for x in password if x in UC_LETTERS]
     number = [x for x in password if x in numbers]
     nonalpha = [x for x in password if x in nonalphas]
-    print nonalpha
     if (len(lowerCase) > 4):
-        rate+=1
-    if(len(upperCase) > 3):
-        rate+=2;
-    if(len(number) > 3):
         rate+=2
-    if(len(nonalpha)>0):
-        rate+=3;
+    if(len(upperCase) > 2):
+        rate+=2;
+    if(len(number) > 2):
+        rate+=2
+    if(len(nonalpha) > 0):
+        rate+=2;
     return rate
     
         
 
-print(passwordRating("Hello123"))
-print(passwordRating("gnkjsdnvkjsnNDAKJNVK1345@$#%"))
+print passwordRating("Hello123")
+print passwordRating("gnkjsdnvkjsnNDAKJNVK1345@$#%")
