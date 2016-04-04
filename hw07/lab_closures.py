@@ -18,6 +18,9 @@ print h(2)
 print h(1)(3)
 print h(2)(5)
 
+c=h(1)
+print str(c(3)) + " should return: " + str(h(1)(3))
+
 def f(x):
     def g(y):
         return x+y
