@@ -16,6 +16,8 @@ Tuples = immutable list
 
 '''
 
+import random
+
 #quicksort works for repetitions too
 def quickSort(l):
     if (len(l) <= 1):
@@ -30,6 +32,16 @@ def quickSort(l):
 
 
 print quickSort([3, 4, 5, 1, 2, 1, 1, 10, 42, 422134])
+
+def quickSort2(l):
+    if len(l) <= 1:
+        return l
+    pivot = random.choice(l)
+    lh = [x for x in l if x<pivot]
+    uh = [y for y in l if y>pivot]
+    return quickSort2(lh) + [z for z in l if z==pivot] + quickSort2(uh)
+
+print quickSort2([4,3,5,2,6])
 
 def pt0(n):
     ans=[]
