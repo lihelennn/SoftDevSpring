@@ -1,0 +1,31 @@
+'''
+AIM: "Memorization[:4]+"Memorization"[5:]
+
+'''
+
+def fib(n):
+    if n < 2:
+        return n
+    else:
+        return fib(n-1) + fib(n-2)
+'''
+DYNAMIC PROGRAMMING
+aka Dynamic Optimization
+Means of solving a complex problem by solving its component problems just once and storing its solutions
+
+MEMOIZATION
+technique of storing solutions to subproblems to avoid recomptation
+or
+Use of caches (a place used to store stuff) to retrieve prviously computer values to reduce time complexity of algorithms
+
+'''
+
+#Rewrite fib(n) to employ dynamic programming
+def fib2(n):
+    stored={}
+    if n<2:
+        return n
+    elif n in stored.keys():
+        return stored[n]
+    else:
+        return fib(n-1)+fib(n-2)
