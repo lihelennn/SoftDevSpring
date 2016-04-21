@@ -17,7 +17,8 @@ var f1 = {
     }
 };
 
-
+//instance of a class
+//constructor
 var makeIncrementer = function(){
     var x = 0;
     return function(){
@@ -28,8 +29,31 @@ var makeIncrementer = function(){
 
 var makeAdder = function(n){
     var x = 0;
-    return function(n){
+    return function(){
 	x+=n;
 	return x;
     }
 };
+
+var makeAdder2 = function(n){
+    return function(x){
+	return x+n;
+    }
+};
+
+var makeCounter = function(){
+    var i = 0;
+    var get = function(){
+	return i;
+    };
+    return {
+	x : "this is a str in dict",
+	set: function(x){ i=x; },
+	get: get,
+	inc: function(){ i+=1; },
+	dec: function(){ i-=1; },
+	setx: function(v){ this.x = v; },
+    }
+}
+
+
